@@ -120,5 +120,9 @@ let complex2: Complex = {
     }
 };
 
+//Union types
+let unionType: number | string | boolean = 50; //number OR string OR boolean
+console.log(unionType);
+
 
 
