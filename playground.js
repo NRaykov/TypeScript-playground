@@ -14,3 +14,11 @@ button.onclick = function () {
     alert(greeter.greet());
 };
 document.body.appendChild(button);
+//Explicity assign types
+var myAge;
+myAge = 29;
+// myAge = '28'; // error
+// ***** Arrays ******
+var hobbies = ['cooking', 'Sports'];
+console.log(typeof hobbies);
+console.log(hobbies[0]);
