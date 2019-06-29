@@ -86,4 +86,18 @@ let myMultiply: (value1: number, value2: number) => number;
 //Functions Types ES6 arrow (value1 and value2 as arguments) => type of number as a return value
 
 
+//***** Objects Types *****/
+let userData: {name: string, age: number} = { // {name: string, age: number} kind of blueprint of the object
+    name: 'Max',
+    age: 29,
+};
+// userData = {}; //Error
+
+//HINT The name of the props is important
+userData = {
+    name: 'John',
+    age: 40
+};
+
+
 
