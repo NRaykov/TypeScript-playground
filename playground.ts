@@ -24,6 +24,9 @@ let myAge: number;
 myAge = 29;
 // myAge = '28'; // error
 
+let myName: string;
+myName = 'Max';
+
 // ***** Arrays ******
 let hobbies = ['cooking', 'Sports'];
 console.log(typeof hobbies);
@@ -55,6 +58,29 @@ enum ColorWithBrakeOrder {
 let getBlue: ColorWithBrakeOrder = ColorWithBrakeOrder.Blue;
 console.log(getBlue); //Will show 101
 
+
+
+
+
+// ***** functions ******
+
+function returnMyName(): string {
+    return myName;
+    
+}
+//returns value with string
+
+function sayHello(): void {
+    console.log('Say Hello');
+}
+//returns nothing (undefined by default) uses VOID type;
+
+
+//** Argument type **//
+function multiply(value1: number, value2: number): number {
+    return value1 * value2;
+}
+console.log(multiply(2, 5)); //Returns 10
 
 
 
