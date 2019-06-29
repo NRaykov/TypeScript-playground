@@ -82,5 +82,8 @@ function multiply(value1: number, value2: number): number {
 }
 console.log(multiply(2, 5)); //Returns 10
 
+let myMultiply: (value1: number, value2: number) => number;
+//Functions Types ES6 arrow (value1 and value2 as arguments) => type of number as a return value
+
 
 
