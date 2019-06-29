@@ -37,4 +37,24 @@ let tuplesType: [string, number] = ['Car', 20344];
 //First type is string second type is number HINT!!! THE ORDER IS IMPORTANT
 
 
+// ***** Enums ******
+enum Color { // Create enum of type Color (custom type)
+    Green, // 0
+    Red, // 1
+    Blue // 2
+}
+let getGreen: Color = Color.Green; //Create variable of type Color and get the green color of this type
+console.log(getGreen); // HINT because of enum type console will show 0 (first index of Color Array)
+
+// Bonus enum hint
+enum ColorWithBrakeOrder {
+    Green, // 0
+    Red = 100, //100
+    Blue // 101
+}
+let getBlue: ColorWithBrakeOrder = ColorWithBrakeOrder.Blue;
+console.log(getBlue); //Will show 101
+
+
+
 
