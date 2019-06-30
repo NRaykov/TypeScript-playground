@@ -160,3 +160,23 @@ console.log(person.name + " " + person.username);
 person.printAge();
 person.setType('Test');
 
+/* Inheritance */
+
+class Max extends Person {
+
+    //HINT child class props ALWAYS overrides props from super class (parent class)
+    name = 'Max' // Overrides Person.name props
+
+
+
+
+
+    //When extending a class, we always have to call SUPER first which call the constructor of the Patent class
+    constructor(username: string) {
+        //super refers to the parent class
+        super("MadMax", username);
+    }
+
+}
+const max = new Max("John");
+console.log(max);

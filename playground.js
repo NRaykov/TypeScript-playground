@@ -1,3 +1,16 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Greeter = /** @class */ (function () {
     function Greeter(message) {
         this.greeting = message;
@@ -103,7 +116,33 @@ var Person = /** @class */ (function () {
         //'this.name' -> refers to Person property 'name'
         //'name' -> refers to constructor property
     }
+    Person.prototype.printAge = function () {
+        console.log(this.age);
+    };
+    Person.prototype.setType = function (type) {
+        //We CAN access Person.type property because we are inside Person class
+        this.type = type;
+        console.log(this.type);
+    };
     return Person;
 }());
 var person = new Person('Max', 'max');
 console.log(person.name + " " + person.username);
+person.printAge();
+person.setType('Test');
+/* Inheritance */
+var Max = /** @class */ (function (_super) {
+    __extends(Max, _super);
+    //When extending a class, we always have to call SUPER first which call the constructor of the Patent class
+    function Max(username) {
+        var _this = 
+        //super refers to the parent class
+        _super.call(this, "MadMax", username) || this;
+        //HINT child class props ALWAYS overrides props from super class (parent class)
+        _this.name = 'Max'; // Overrides Person.name props
+        return _this;
+    }
+    return Max;
+}(Person));
+var max = new Max("John");
+console.log(max);
