@@ -124,5 +124,39 @@ let complex2: Complex = {
 let unionType: number | string | boolean = 50; //number OR string OR boolean
 console.log(unionType);
 
+//Never type
+function neverReturns(): never {
+    throw new Error('An Error');
 
+}
+
+/* ******************************************************************************** */
+/* Classes */
+
+class Person {
+    name: string;
+    private type: string;
+    protected age: number;
+
+    constructor(name: string, public username: string) {
+        this.name = name;
+        //'this.name' -> refers to Person property 'name'
+
+        //'name' -> refers to constructor property
+    }
+
+    printAge() {
+        console.log(this.age);
+    }
+    setType(type: string) {
+        //We CAN access Person.type property because we are inside Person class
+        this.type = type;
+        console.log(this.type);
+    }
+}
+const person = new Person('Max', 'max');
+console.log(person.name + " " + person.username);
+
+person.printAge();
+person.setType('Test');
 
