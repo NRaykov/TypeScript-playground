@@ -204,3 +204,16 @@ plant.species = 'AB';
 console.log(plant.species);
 plant.species = 'Green Plant';
 console.log(plant.species);
+
+
+//Static Properties and Methods
+class Helpers {
+    //We can access PI property without instantiate 'Helpers' class with accessor 'static'
+    static PI: number = 3.14;
+    static calcuation(diamiter: number) {
+        return this.PI * diamiter;
+    }
+}
+
+console.log(Helpers.PI);
+console.log(Helpers.calcuation(2));
