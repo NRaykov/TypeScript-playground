@@ -167,16 +167,40 @@ class Max extends Person {
     //HINT child class props ALWAYS overrides props from super class (parent class)
     name = 'Max' // Overrides Person.name props
 
-
-
-
-
     //When extending a class, we always have to call SUPER first which call the constructor of the Patent class
     constructor(username: string) {
         //super refers to the parent class
         super("MadMax", username);
+        this.age = 31;
     }
 
 }
 const max = new Max("John");
 console.log(max);
+
+
+//Getters And Setters
+class Plant {
+    private _species: string = 'Default';
+
+
+    get species() {
+        return this._species;
+    }
+
+    set species(value: string) {
+        if (value.length > 3) {
+            this._species = value;
+        } else {
+            this._species = 'Default';
+        }
+
+    }
+}
+//**** Hint Convenient Way to use getter and setters to control access to class properties.
+let plant = new Plant();
+console.log(plant.species);
+plant.species = 'AB';
+console.log(plant.species);
+plant.species = 'Green Plant';
+console.log(plant.species);

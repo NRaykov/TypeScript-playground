@@ -140,9 +140,39 @@ var Max = /** @class */ (function (_super) {
         _super.call(this, "MadMax", username) || this;
         //HINT child class props ALWAYS overrides props from super class (parent class)
         _this.name = 'Max'; // Overrides Person.name props
+        _this.age = 31;
         return _this;
     }
     return Max;
 }(Person));
 var max = new Max("John");
 console.log(max);
+//Getters And Setters
+var Plant = /** @class */ (function () {
+    function Plant() {
+        this._species = 'Default';
+    }
+    Object.defineProperty(Plant.prototype, "species", {
+        get: function () {
+            return this._species;
+        },
+        set: function (value) {
+            if (value.length > 3) {
+                this._species = value;
+            }
+            else {
+                this._species = 'Default';
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Plant;
+}());
+//**** Hint Convenient Way to use getter and setters to control access to class properties.
+var plant = new Plant();
+console.log(plant.species);
+plant.species = 'AB';
+console.log(plant.species);
+plant.species = 'Green Plant';
+console.log(plant.species);
